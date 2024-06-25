@@ -8,7 +8,8 @@
 }
 
 body {
-  font-family: "Poppinns", sans-serif;
+  font-family: "Poppins", sans-serif;
+  background-color: rgb(248, 245, 235);
 }
 
 html {
@@ -17,6 +18,65 @@ html {
 
 p {
   color: rgb (85, 85, 85);
+}
+
+/*Background*/
+
+.wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.box div {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-color: transparent;
+  border: 6px solid black;
+}
+
+.box div:nth-child(1) {
+  width: 50px;
+  height: 70px;
+  border: 6px solid #ff6347;
+  top: calc(100% * 0.1);
+  left: calc(100% * 0.15);
+  animation: animate 9s linear infinite;
+}
+.box div:nth-child(2) {
+  width: 150px;
+  height: 150px;
+  border: 6px solid #4682b4;
+  top: calc(100% * 0.7);
+  left: calc(100% * 0.6);
+  animation: animate 7s linear infinite;
+}
+.box div:nth-child(3) {
+  width: 100px;
+  height: 100px;
+  border: 6px solid #32cd32;
+  top: calc(100% * 0.4);
+  left: calc(100% * 0.75);
+  animation: animate 11s linear infinite;
+}
+.box div:nth-child(4) {
+  width: 250px;
+  height: 250px;
+  border: 6px solid #ff4500;
+  top: calc(100% * 0.5);
+  left: calc(100% * 0.25);
+  animation: animate 9s linear infinite;
+}
+.box div:nth-child(5) {
+  width: 120px;
+  height: 120px;
+  border: 6px solid #1e90ff;
+  top: calc(100% * 0.8);
+  left: calc(100% * 0.1);
+  animation: animate 13s linear infinite;
 }
 
 /*Transition*/
@@ -51,19 +111,50 @@ a {
   text-decoration-color: white;
 }
 
-a:hover {
-  color: gray;
-  text-decoration: underline;
-  text-underline-offset: 1rem;
-  text-decoration-color: darkslategray;
-}
-
 .logo {
   font-size: 2rem;
 }
 
 .logo:hover {
   cursor: default;
+}
+
+/*Hover animation*/
+
+.button {
+  padding: 0.5rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.button:before {
+  content: "";
+  background: rgb(163, 163, 163);
+  position: absolute;
+  top: 0;
+  width: 0;
+  left: 50%;
+  height: 3px;
+  transform: translateX(-50%);
+  transition: all cubic-bezier(0, 0.96, 0.58, 1.1) 1s;
+}
+
+.button:after {
+  content: "";
+  background: rgb(163, 163, 163);
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  left: 50%;
+  height: 3px;
+  transform: translateX(-50%);
+  transition: all cubic-bezier(0, 0.96, 0.58, 1.1) 1s;
+}
+
+.button:hover:before,
+.button:hover:after {
+  width: 80%;
+  transition: all cubic-bezier(0, 0.96, 0.58, 1.1) 1s;
 }
 
 /* Hamburger Menu */
