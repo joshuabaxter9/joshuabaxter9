@@ -39,7 +39,7 @@ p {
 }
 
 .box div:nth-child(1) {
-  width: 50px;
+  width: 70px;
   height: 70px;
   border: 6px solid #ff6347;
   top: calc(100% * 0.1);
